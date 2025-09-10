@@ -19,7 +19,7 @@ function TableTurmas({ handleNameBackground }) {
         async function fetchTurmas() {
             if (professor) {
                 try {
-                    const response = await fetch(`http://localhost:8080/api/turmas/professor/1/alunos`);
+                    const response = await fetch(`https://threeano-mostra.onrender.com/api/turmas/professor/1/alunos`);
                     const data = await response.json();
                     setTurmas(data);
                     console.log("Dados recebidos:", data);
@@ -34,7 +34,7 @@ function TableTurmas({ handleNameBackground }) {
 
     const handleDelete = async (turmaId) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/turmas/${turmaId}`, {
+            const response = await fetch(`https://threeano-mostra.onrender.com/api/turmas/${turmaId}`, {
                 method: 'DELETE',
             });
 

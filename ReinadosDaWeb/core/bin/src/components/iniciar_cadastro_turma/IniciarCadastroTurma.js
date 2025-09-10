@@ -28,7 +28,7 @@ function IniciarCadastroTurma() {
             const idProfessor = professor.id; // ID do professor logado
             const json = { nomeTurma, codigoTurma, idProfessor }; // Inclui o ID do professor
             console.log(json);
-            const response = await fetch('http://localhost:8080/api/turmas', {
+            const response = await fetch('https://threeano-mostra.onrender.com/api/turmas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

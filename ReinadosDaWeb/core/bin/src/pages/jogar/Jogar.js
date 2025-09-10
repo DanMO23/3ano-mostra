@@ -45,7 +45,7 @@ function Jogar() {
       const fetchGameData = async () => {
          setLoading(true);
          try {
-            const response = await axios.get('http://localhost:8080/api/jogo/arcos');
+            const response = await axios.get('https://threeano-mostra.onrender.com/api/jogo/arcos');
             setGameData(response.data);
             console.log(response.data);
          } catch (error) {
@@ -144,7 +144,7 @@ function Jogar() {
       console.log(dadosParaEnviar);
 
       try {
-         await axios.post('http://localhost:8080/api/jogo/salvar', dadosParaEnviar);
+         await axios.post('https://threeano-mostra.onrender.com/api/jogo/salvar', dadosParaEnviar);
          console.log('Dados enviados com sucesso!', dadosParaEnviar);
       } catch (error) {
          console.error('Erro ao enviar dados:', error);

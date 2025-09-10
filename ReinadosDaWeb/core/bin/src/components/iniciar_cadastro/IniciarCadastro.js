@@ -23,7 +23,7 @@ function IniciarCadastro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/professores', {
+            const response = await fetch('https://threeano-mostra.onrender.com/api/professores', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

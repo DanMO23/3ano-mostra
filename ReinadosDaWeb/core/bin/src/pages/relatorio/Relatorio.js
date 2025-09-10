@@ -103,7 +103,7 @@ function Relatorio() {
             setIsLoading(false)
             if (turmaSelecionada && turmaSelecionada.id) {
                 try {
-                    const response = await fetch(`http://localhost:8080/api/relatorios/turma/${turmaSelecionada.id}`);
+                    const response = await fetch(`https://threeano-mostra.onrender.com/api/relatorios/turma/${turmaSelecionada.id}`);
                     if (response.ok) {
                         const data = await response.json();
                         console.log("Dados do relatório recebidos do backend:", data);
@@ -132,7 +132,7 @@ function Relatorio() {
         async function fetchTurmas() {
             if (professor) {
                 try {
-                    const response = await fetch(`http://localhost:8080/api/turmas/professor/${professor.id}`);
+                    const response = await fetch(`https://threeano-mostra.onrender.com/api/turmas/professor/${professor.id}`);
                     const data = await response.json();
                     console.log("Dados recebidos do backend:", data);
                     setDetalhesTurma(data || []);

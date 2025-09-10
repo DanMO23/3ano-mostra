@@ -20,7 +20,7 @@ function IniciarRegistro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/alunos', {
+            const response = await fetch('https://threeano-mostra.onrender.com/api/alunos', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
