@@ -21,7 +21,7 @@ import com.backend.pi.backend.service.ProfessorService;
 
 @RestController
 @RequestMapping("/api/professores")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://68c1c23d19f4d8c28d979090--integrador-3ano-mostra.netlify.app"})
 public class ProfessorController {
 
     @Autowired
