@@ -17,7 +17,7 @@ import com.backend.pi.backend.service.AlunoService;
 
 @RestController
 @RequestMapping("/api/alunos")
-@CrossOrigin(origins = {"http://localhost:3000", "https://68c1c23d19f4d8c28d979090--integrador-3ano-mostra.netlify.app"})
+@CrossOrigin(origins = "*")
 public class AlunoController {
 
     @Autowired

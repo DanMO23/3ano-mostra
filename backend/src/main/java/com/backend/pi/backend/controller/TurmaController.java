@@ -24,7 +24,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 @RestController
 @RequestMapping("/api/turmas")
-@CrossOrigin(origins = {"http://localhost:3000", "https://68c1c23d19f4d8c28d979090--integrador-3ano-mostra.netlify.app"})
+@CrossOrigin(origins = "*")
 public class TurmaController {
 
    @Autowired
