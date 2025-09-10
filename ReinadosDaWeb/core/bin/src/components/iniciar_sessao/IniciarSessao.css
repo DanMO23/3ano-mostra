@@ -1,0 +1,89 @@
+.formi-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    padding-top: 35px;
+}
+
+.container-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+#container-button-login {
+    justify-content: center;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    margin: 10px 0;
+    max-width: 500px;
+    max-height: 100px;
+}
+
+.input-label {
+    font-family: 'Press Start 2P', cursive;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC907;
+    border-radius: 50px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.input-with-icon svg {
+    font-size: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
+    color: white;
+}
+
+.input-with-icon svg {
+    margin-left: 25px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .formi-login {
+        margin-top: 20px;
+    }
+
+    .icon-login {
+        display: none;
+    }
+
+    .input-with-icon {
+        padding-left: 0; 
+    }
+
+    .input-with-icon svg {
+        display: none;
+    }
+
+    .input-container {
+        width: 60vw;
+        max-width: none;
+    }
+}

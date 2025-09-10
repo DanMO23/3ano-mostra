@@ -1,0 +1,90 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-size: 100%;
+  border: none;                
+  transition: transform 1s;
+  cursor: pointer;
+  top: 50px;
+  left: 50px;
+}
+
+.settings:active {
+  transform: rotate(360deg); 
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+
+  background-image: url('../../assets/beginImg/Background\ -\ Tela.png');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.title-home {
+  margin-top: 10%;
+  color: #FFC907;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20pt;
+
+  text-align: center;
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+  white-space: normal;
+  text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5), /* Primeira sombra */
+        -2px -2px 4px rgba(0, 0, 0, 0.5), /* Segunda sombra */
+        3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.container-buttons-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  gap: 40px;
+  padding-bottom: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .title-home {
+    margin-top: 50%;
+    font-size: 12pt;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .title-home {
+    margin-top: 20%;
+  }
+
+  .container-buttons-home {
+    margin-bottom: 40px;
+  }
+}
+
+

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.backgroundSection {
+  height: 100vh;
+  width: 100vw;
+
+  background-image: url('../../assets/beginImg/Background\ -\ Tela.png');
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+

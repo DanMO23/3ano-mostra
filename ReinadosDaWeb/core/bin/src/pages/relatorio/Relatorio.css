@@ -1,0 +1,108 @@
+.container-relatorios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura máxima do viewport */
+    overflow-y: auto; /* Habilita a barra de rolagem vertical */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding na largura/altura */
+}
+
+.info-games-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: calc(100vh - 50px); /* Limita a altura da seção de jogos */
+    overflow-y: auto; /* Habilita rolagem se necessário */
+    padding: 10px;
+    padding-top: 120px;
+    box-sizing: border-box;
+}
+
+.info-games-title {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    font-size: 24px; 
+    color: gray;
+    margin: 10px 0; 
+    width: 100%;
+}
+
+.icon-games {
+    font-size: 32px; 
+    color: gray; 
+}
+
+.icon-title {
+    font-size: 32px; 
+}
+
+.info-games-matchs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%; /* Limita a largura máxima */
+    overflow-x: auto; /* Permite rolagem horizontal se necessário */
+}
+
+.title-class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Press Start 2P', cursive;
+    color: #FFC907;
+    margin-top: 100px; /* Reduz a margem para economizar espaço */
+}
+
+.erro-mensagem {
+    color: #FFC907;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semitransparente */
+    z-index: 9999;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* turmas.map((turma) => (
+                            <tr key={turma.id}>
+                                <td>{turma.nomeTurma}</td>
+                                <td id="paragrafo" onClick={() => onRowClick(turma)}>
+                                    <div className="button-detail">Detalhes</div>
+                                </td>
+                            </tr> */

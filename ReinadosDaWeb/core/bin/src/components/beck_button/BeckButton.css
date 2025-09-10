@@ -1,0 +1,29 @@
+.back-button {
+    position: absolute;
+    background-image: url('../../assets/sectionImg/IcVoltar.png');
+    background-color: transparent;
+    border: none;
+    background-size: 100%;
+    background-Repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.position-back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-button:hover {
+    background-image: url('../../assets/sectionImg/IcVoltar\ -\ Apertado.png');
+}
+
+@media (max-width: 500px) {
+    .back-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}

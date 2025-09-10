@@ -1,0 +1,288 @@
+.fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.botoesGerencia {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.cadastraTurma {
+    background-image: url('../../assets/managementImg/BtCriarTurma.png');
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 600px;
+    height: 90px;
+    background-Repeat: no-repeat;
+    background-size: 100%
+}
+
+.cadastraTurma:hover {
+    background-image: url('../../assets/managementImg/BtCriarTurma\ -\ Apertado.png');
+}
+
+.turmas {
+    background-image: url('../../assets/managementImg/BtTurmas.png');
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 600px;
+    height: 90px;
+    background-Repeat: no-repeat;
+    background-size: 100%
+}
+
+.turmas:hover {
+    background-image: url('../../assets/managementImg/BtTurmas\ -\ Apertado.png');
+}
+
+.relatorio {
+    background-image: url('../../assets/managementImg/BtRelatorios.png');
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 600px;
+    height: 90px;
+    background-Repeat: no-repeat;
+    background-size: 100%
+}
+
+.relatorio:hover {
+    background-image: url('../../assets/managementImg/BtRelatorios\ -\ Apertado.png');
+}
+
+.management-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    height: 90%;
+}
+
+.table-container {
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #FFC907;
+    height: 100%;
+}
+
+.zero{
+    width: 100%;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #FFC907;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.turmasTable {
+    width: 100%;
+    height: 320px;
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+}
+
+.turmasTable th,
+.turmasTable td {
+    padding: 20px;
+    border: 1px solid white;
+    border: none;
+}
+
+.turmasTable th {
+    background-color: #FFFFFF;
+    font-weight: bold;
+    position: sticky;
+    color: #FFC907;
+}
+
+.turmasTable td {
+    color: #fff;
+    background-color: #FFC907;
+}
+
+.p {
+    font-family: 'Press Start 2P', cursive;
+    color: #FFC907;
+    font-size: 20px;
+}
+
+.paragrafo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.format-table {
+    max-height: 80%;
+    overflow-x: auto;
+    overflow-y: auto;
+
+    margin: 50px;
+    margin-top: 120px;
+
+    border-radius: 30px;
+}
+
+/* Estiliza a barra de rolagem em geral */
+::-webkit-scrollbar {
+    width: 20px;
+    height: 12px;
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: #FFC907;
+    border-radius: 10px;
+}
+
+/* Estiliza a "thumb" (o elemento que você move) */
+::-webkit-scrollbar-thumb {
+    background-color: #fef7ca;
+    border-radius: 10px;
+    border: 3px solid #FFC907;
+}
+
+/* Estiliza o hover da thumb */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #FFA500;
+}
+
+p {
+    font-family: 'Press Start 2P', cursive;
+    color: #FFC907;
+    font-size: 20px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: #FFC907;
+    /* Cor dos três pontinhos */
+    cursor: pointer;
+    font-size: 20px;
+    /* Tamanho do ícone */
+}
+
+.menu-button:hover {
+    color: #FFA500;
+    /* Cor ao passar o mouse */
+}
+
+.delete-icon-cell {
+    text-align: right;
+    /* Alinha o ícone à direita */
+    padding-right: 16px;
+    /* Espaço à direita para o ícone */
+}
+
+.delete-icon {
+    color: rgb(255, 255, 255);
+    /* Cor do ícone de lixeira */
+    cursor: pointer;
+    /* Muda o cursor para pointer quando sobre o ícone */
+    font-size: 2em;
+    /* Ajusta o tamanho do ícone */
+}
+
+.centralize {
+    text-align: center;
+}
+
+.informacoes-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    height: 100%;
+    width: 100%;
+
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#paragrafo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFC907;
+    width: 100%;
+    height: 100%;
+}
+
+#inf-buton {
+    font-size: 18px;
+    width: 200px;
+    height: 60px;
+
+    color: white;
+
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#inf-buton-red {
+    font-size: 18px;
+    background-color: rgb(241, 44, 44);
+    width: 200px;
+    height: 60px;
+
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#inf-buton-red:hover {
+    background-color: rgb(255, 95, 95);
+}
+
+.inf-butom-conteiner {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 60px;
+}
+
+.button-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: #fef7ca 3px solid;
+    border-radius: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 180px;
+    height: 100%;
+
+    background-color: #FCD24F;
+}
+
+.button-detail:hover {
+    background-color: #FFA500;
+    cursor: pointer;
+}

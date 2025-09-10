@@ -1,0 +1,26 @@
+.game-card {
+    position: absolute;
+    width: 270px; 
+    height: 360px; 
+    left: 0;
+    top: 0;
+    cursor: grab;
+    background-image: url('https://i.imgur.com/2dYv3r4.png'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.game-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 670px) {
+    .game-card {
+        width: 200px; 
+        height: 270px; 
+    }
+}

@@ -1,0 +1,32 @@
+.camp{
+    background-color: transparent;
+    border: none;
+    background-size: 100%;
+    background-Repeat: no-repeat;
+    width: 50vw;
+    height: 10vh;
+    background-color: #FFC907;
+    border-radius: 50px;
+    font-family: 'Press Start 2P', cursive;
+    padding: 20px;
+    font-size: 18px;
+    outline: none;
+    padding-left: 35px;
+    color: white;
+}
+
+@media (max-width: 425px) {
+    .camp{
+        min-width: 100%;
+        max-width: none;
+    }
+}
+
+.camp:focus {
+    outline: none;
+    border: none;
+}
+
+.camp::placeholder {
+    color: #FFFFFF; 
+}

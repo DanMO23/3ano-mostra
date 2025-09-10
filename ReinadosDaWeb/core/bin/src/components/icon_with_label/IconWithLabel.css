@@ -1,0 +1,21 @@
+.icon-with-label {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    padding: 8px;
+    background: none; 
+    box-shadow: none; 
+    border: none;
+}
+
+.icon {
+    color: #ffc800;
+    border: none;
+    box-shadow: none;
+}
+
+.label {
+    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    color: #FFC907;
+}

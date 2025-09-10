@@ -1,0 +1,212 @@
+.screen-container {
+    background-color: #eeeff5;
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.game-container {
+    border: 2px solid #000;
+    border-radius: 20px;
+    width: 90vw;
+    height: 90vh; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+
+    font-family: 'Press Start 2P', cursive;
+    color: #FFC907;
+    text-shadow: #000 1px 1px 1px;
+}
+
+.game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 1s;
+}
+
+.game-over-message {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.arco-concluido-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.arco-concluido-message {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.arco-concluido-message h2 {
+    font-size: 24px;
+    margin-bottom: 15px; 
+    color: #FFC907; 
+}
+
+.arco-concluido-message p {
+    font-size: 16px; 
+    margin-bottom: 20px; 
+    color: #555555; 
+}
+
+.arco-concluido-message ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.arco-concluido-message ul li {
+    margin: 5px 0;
+    color: #555555; 
+}
+
+@keyframes bounceToCenter {
+    0% {
+        transform: translateX(-5px) rotate(0deg);
+    }
+    50% {
+        transform: translateX(5px) rotate(0deg);
+    }
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+.bounce-animation {
+    animation: bounceToCenter 0.6s ease-out;
+}
+
+.feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+.feedback-message {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 20px 30px; 
+    width: 90%; 
+    max-width: 400px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    animation: fadeIn 0.5s ease-in-out; 
+}
+
+.feedback-message h2 {
+    font-size: 24px;
+    margin-bottom: 15px; 
+    color: #FFC907; 
+}
+
+.feedback-message p {
+    font-size: 16px; 
+    margin-bottom: 20px; 
+    color: #555555; 
+}
+
+.feedback-message button {
+    background-color: #4caf50; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.feedback-message button:hover {
+    background-color: #45a049; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@media screen and (max-width: 670px) {
+    .feedback-overlay, .arco-concluido-overlay, .game-over-overlay {
+        padding: 0 20px; 
+    }
+    
+}
