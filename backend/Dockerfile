@@ -1,26 +1,12 @@
 # ---- Estágio 1: Build ----
 # Usamos uma imagem oficial do Maven com Java 17 para compilar nosso projeto
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.mvn/wrapper/maven-wrapper.jar*.iml.idea/.vscode/node_modules/.DS_Store.env*.md*.logRENDER_DEPLOY.mdREADME.md.gitignore.gitFROM maven:3.8.5-openjdk-17 AS build
+FROM maven:3.8.5-openjdk-17 AS build
 
 # Define o diretório de trabalho dentro do container
 WORKDIR /app
 
 # Copia o wrapper do Maven (se existir)
-COPY mvnw .
+COPY mvnw* .
 COPY .mvn .mvn
 
 # Copia o arquivo de dependências primeiro para aproveitar o cache do Docker
