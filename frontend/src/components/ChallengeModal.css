@@ -10,84 +10,98 @@
   align-items: center;
   justify-content: center;
   z-index: 50;
+  padding: 16px;
 }
 
 .modal-content {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   background: var(--color-white);
-  padding: 40px;
+  padding: 40px 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  border-radius: 24px;
 }
 
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 12px;
+  right: 12px;
   background: none;
   border: none;
   cursor: pointer;
   color: var(--color-text-light);
   transition: color 0.2s;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .close-btn:hover {
   color: var(--color-danger);
+  background: rgba(0,0,0,0.05);
 }
 
 .challenge-view h2 {
   color: var(--color-primary);
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-text);
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+  line-height: 1.4;
 }
 
 .options-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .option-btn {
   background: var(--color-bg);
   border: 2px solid var(--color-accent);
-  padding: 15px 20px;
+  padding: 16px;
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-text);
   cursor: pointer;
   font-family: var(--font-main);
-  transition: background 0.2s;
+  transition: all 0.2s;
+  min-height: 64px; /* Generous touch target for buttons */
 }
 
 .option-btn:hover {
   background: var(--color-accent);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
 
 .result-view {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 16px;
+  padding: 20px 0;
 }
 
 .result-view h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: var(--color-text);
 }
 
 .result-view p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
+
