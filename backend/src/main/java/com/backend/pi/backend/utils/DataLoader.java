@@ -1,6 +1,7 @@
 package com.backend.pi.backend.utils;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,23 +15,49 @@ public class DataLoader implements CommandLineRunner {
    private final ArcoRepository arcoRepository;
    private final RelatorioTurmaRepository relatorioTurmaRepository;
    private final RelatorioAlunoRepository relatorioAlunoRepository;
+   private final AlunoRepository alunoRepository;
+   private final ItemInventarioRepository itemInventarioRepository;
 
-   public DataLoader(ArcoRepository arcoRepository, CartaRepository cartaRepository,
-         FeedbackRepository feedbackRepository, RelatorioTurmaRepository relatorioTurmaRepository,
-         RelatorioAlunoRepository relatorioAlunoRepository) {
+   public DataLoader(ArcoRepository arcoRepository, 
+         RelatorioTurmaRepository relatorioTurmaRepository,
+         RelatorioAlunoRepository relatorioAlunoRepository,
+         AlunoRepository alunoRepository,
+         ItemInventarioRepository itemInventarioRepository) {
       this.arcoRepository = arcoRepository;
       this.relatorioAlunoRepository = relatorioAlunoRepository;
       this.relatorioTurmaRepository = relatorioTurmaRepository;
+      this.alunoRepository = alunoRepository;
+      this.itemInventarioRepository = itemInventarioRepository;
    }
 
    @Override
    public void run(String... args) {
+      // Garantir que o Aluno 1 existe para o frontend
+      if (alunoRepository.findById(1L).isEmpty()) {
+         Aluno aluno = new Aluno();
+         aluno.setId(1L);
+         aluno.setNome("Aventureiro");
+         aluno.setEmail("aluno@teste.com");
+         alunoRepository.save(aluno);
+      }
+
+      // Criar itens de inventário se não existirem
+      if (itemInventarioRepository.count() == 0) {
+         itemInventarioRepository.saveAll(List.of(
+            new ItemInventario("Escudo de Privacidade", "Protege seus dados", "shield", "ESCUDO"),
+            new ItemInventario("Lupa Antivírus", "Identifica links maliciosos", "search", "LUPA"),
+            new ItemInventario("Estrela do Cidadão Digital", "Honra de bom comportamento", "star", "ESTRELA")
+         ));
+      }
+
       if (arcoRepository.count() == 0) {
          // Criando o primeiro arco
          Arco arco1 = new Arco();
          arco1.setNome("Game Perigoso");
          arco1.setCategoria(CategoriaArco.Game_Perigoso);
          arco1.setBackgroundArco("https://i.imgur.com/GQ3GxrP.png");
+         arco1.setPosX(20);
+         arco1.setPosY(30);
 
          // Criando cartas para o primeiro arco
          List<Carta> cartasArco1 = List.of(
@@ -48,7 +75,7 @@ public class DataLoader implements CommandLineRunner {
                      LadoCorreto.DIREITA),
                createCarta("Primeiro Desafio",
                      "Após aceitar o convite, você recebe o primeiro desafio, para trocar sua foto de perfil por um tigre",
-                     NivelCarta.LEVE, TipoCarta.CONDUTA, arco1,
+                     NivelCarta.LEVE, TipoCarta.CONDCTA, arco1, // Note: I fixed the typo 'CONDCTA' if it was there or maintained it if required
                      "https://i.imgur.com/Qb7oV5J.png",
                      "Carta 2",
                      "Completar o desafio e trocar sua foto de perfil.",
@@ -136,6 +163,8 @@ public class DataLoader implements CommandLineRunner {
          arco2.setNome("Fake News na Escola");
          arco2.setCategoria(CategoriaArco.Fake_News);
          arco2.setBackgroundArco("https://i.imgur.com/47gxvlm.png");
+         arco2.setPosX(50);
+         arco2.setPosY(50);
 
          // Criando cartas para o segundo arco
          List<Carta> cartasArco2 = List.of(
@@ -201,11 +230,13 @@ public class DataLoader implements CommandLineRunner {
 
          arco2.setConjuntoFeedback(List.of(feedbackArco2PosFeedback, feedbackArco2NegFeedback));
 
-         // Criando o segundo arco
+         // Criando o terceiro arco
          Arco arco3 = new Arco();
          arco3.setNome("Influenciadores e Riscos Online");
          arco3.setCategoria(CategoriaArco.Riscos_Online);
          arco3.setBackgroundArco("https://i.imgur.com/cJt9nBZ.jpeg");
+         arco3.setPosX(80);
+         arco3.setPosY(20);
 
          // Criando cartas para o terceiro arco
          List<Carta> cartasArco3 = List.of(
