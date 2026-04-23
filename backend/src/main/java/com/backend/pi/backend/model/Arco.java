@@ -41,6 +41,15 @@ public class Arco {
     @Column(name = "background_arco")
     private String backgroundArco;
 
+    @Column(name = "icone_url")
+    private String iconeUrl;
+
+    @Column(name = "pos_x")
+    private Integer posX;
+
+    @Column(name = "pos_y")
+    private Integer posY;
+
     // Construtor padrão
     public Arco() {
     }
@@ -110,6 +119,30 @@ public class Arco {
 
     public void setBackgroundArco(String backgroundArco) {
         this.backgroundArco = backgroundArco;
+    }
+
+    public String getIconeUrl() {
+        return iconeUrl;
+    }
+
+    public void setIconeUrl(String iconeUrl) {
+        this.iconeUrl = iconeUrl;
+    }
+
+    public Integer getPosX() {
+        return posX;
+    }
+
+    public void setPosX(Integer posX) {
+        this.posX = posX;
+    }
+
+    public Integer getPosY() {
+        return posY;
+    }
+
+    public void setPosY(Integer posY) {
+        this.posY = posY;
     }
 
     @Override
