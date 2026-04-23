@@ -1,0 +1,100 @@
+.hud-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+.header-panel {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 16px;
+  border-radius: 50px; /* Pill shape */
+}
+
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-white);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.student-info h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.student-info p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-tertiary);
+  margin: 0;
+}
+
+.inventory-panel {
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inventory-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--glass-border);
+  padding-bottom: 10px;
+}
+
+.inventory-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.inventory-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.inventory-item {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.empty-text {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  text-align: center;
+  width: 100%;
+}
