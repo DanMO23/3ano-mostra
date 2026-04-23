@@ -4,18 +4,21 @@ import { useGameStore } from '../store/useGameStore';
 import { MapPin, Lock } from 'lucide-react';
 import './Map.css';
 
-const ZONES = [
-  { id: 'floresta-das-redes', name: 'Floresta das Redes', x: 20, y: 30, color: 'var(--color-tertiary)' },
-  { id: 'montanha-gamer', name: 'Montanha Gamer', x: 50, y: 50, color: 'var(--color-accent)' },
-  { id: 'vila-segura', name: 'Vila Segura', x: 80, y: 20, color: 'var(--color-primary)' }
+const FALLBACK_ZONES = [
+  { id: 1, name: 'Floresta das Redes', posX: 20, posY: 30, color: 'var(--color-tertiary)' },
+  { id: 2, name: 'Montanha Gamer', posX: 50, posY: 50, color: 'var(--color-accent)' },
+  { id: 3, name: 'Vila Segura', posX: 80, posY: 20, color: 'var(--color-primary)' }
 ];
 
+const COLORS = ['var(--color-tertiary)', 'var(--color-accent)', 'var(--color-primary)'];
+
 export default function Map() {
-  const { unlockedZones, openChallenge } = useGameStore();
+  const { unlockedZones, openChallenge, zonesData } = useGameStore();
+
+  const displayZones = zonesData.length > 0 ? zonesData : FALLBACK_ZONES;
 
   return (
     <div className="map-container">
-      {/* Background visual elements can go here. We'll use simple CSS for the map background */}
       <div className="map-background">
         <motion.div 
           className="cloud cloud-1"
@@ -29,23 +32,24 @@ export default function Map() {
         />
       </div>
 
-      {ZONES.map((zone) => {
+      {displayZones.map((zone, index) => {
         const isUnlocked = unlockedZones.includes(zone.id);
+        const zoneColor = COLORS[index % COLORS.length];
         
         return (
           <motion.div
             key={zone.id}
             className={`map-pin ${isUnlocked ? 'unlocked' : 'locked'}`}
-            style={{ left: `${zone.x}%`, top: `${zone.y}%` }}
+            style={{ left: `${zone.posX || (index * 30 + 10)}%`, top: `${zone.posY || 40}%` }}
             whileHover={{ scale: 1.2, y: -10 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => isUnlocked ? openChallenge(zone.id) : null}
           >
-            <div className="pin-icon" style={{ backgroundColor: isUnlocked ? zone.color : 'var(--color-text-light)' }}>
+            <div className="pin-icon" style={{ backgroundColor: isUnlocked ? zoneColor : 'var(--color-text-light)' }}>
               {isUnlocked ? <MapPin size={32} color="#fff" /> : <Lock size={24} color="#fff" />}
             </div>
             <div className="pin-label glass-panel">
-              {zone.name}
+              {zone.nome || zone.name}
             </div>
           </motion.div>
         );
